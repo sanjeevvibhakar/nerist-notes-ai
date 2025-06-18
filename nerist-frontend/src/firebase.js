@@ -3,7 +3,7 @@ import { initializeApp, getApps, getApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyC7OL3PQNp8M26M69GNvHhDfZloUB48BtU",
+  apiKey: "",
   authDomain: "nerist-study-portal-ffad5.firebaseapp.com",
   projectId: "nerist-study-portal-ffad5",
   storageBucket: "nerist-study-portal-ffad5.appspot.com",
