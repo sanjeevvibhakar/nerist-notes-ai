@@ -15,7 +15,9 @@ This guide explains how to deploy the **Django Backend** to Render and the **Rea
     *   **Build Command:** `pip install -r requirements.txt && python manage.py migrate && python manage.py collectstatic --noinput`
     *   **Start Command:** `gunicorn nerist_portal.wsgi:application`
     *   **Environment Variables:**
-        *   `PYTHON_VERSION`: `3.11.9` (Required for Django 6+)
+        > [!IMPORTANT]
+        > Render's **Environment Variables** tab takes precedence over `runtime.txt`.
+        *   `PYTHON_VERSION`: Set this to `3.11.9` (or `3.12.0`). **If it is currently `3.9.0`, you MUST change it here.**
         *   `SECRET_KEY`: (Generate a random string)
         *   `DEBUG`: `False` (Important for security)
         *   `DATABASE_URL`: **See Step 1.1 below**
