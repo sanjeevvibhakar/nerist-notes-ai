@@ -12,7 +12,7 @@ This guide explains how to deploy the **Django Backend** to Render and the **Rea
     *   Click **New +** -> **Web Service**.
     *   Connect your GitHub repo.
     *   **Root Directory:** `.` (or leave empty)
-    *   **Build Command:** `pip install -r requirements.txt && python manage.py migrate && python manage.py collectstatic --noinput`
+    *   **Build Command:** `pip install -r requirements.txt && python manage.py migrate && python manage.py seed_data && python manage.py collectstatic --noinput`
     *   **Start Command:** `gunicorn nerist_portal.wsgi:application`
     *   **Environment Variables:**
         > [!IMPORTANT]
@@ -28,10 +28,7 @@ Render provides a free PostgreSQL instance.
 2.  Name it (e.g., `nerist-db`), choose a region (e.g., Singapore/US), and select **Free Plan**.
 3.  Once created, copy the **Internal Database URL** (if deploying backend on Render) or **External Database URL**.
 4.  Paste this URL into the `DATABASE_URL` environment variable in your Web Service settings.
-5.  **Seed Initial Data:**
-    *   On the Render dashboard for your Web Service, click the **Shell** tab.
-    *   Run: `python manage.py seed_data`
-    *   This will populate the initial Departments and Subjects.
+5.  The database will be automatically seeded with Departments and Subjects during the next build!
 
 ---
 
