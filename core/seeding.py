@@ -29,15 +29,32 @@ def run_seed_data(stdout_write_func=print):
         stdout_write_func(f'Departments after deletion: {post_count}')
 
         # Mapping for normalization
+        # Standardized names:
+        # Computer Science and Engineering
+        # Electronics and Communication Engineering
+        # ... (others are clean)
+        
         DEPT_MAP = {
-            'Computer Science & Engineering': 'Computer Science and Engineering',
-            'Electronics & Communication Engineering': 'Electronics and Communication Engineering',
-            'Electronics & Communication': 'Electronics and Communication Engineering',
-            'Electronics and Communication': 'Electronics and Communication Engineering',
-            'Dept. of Chemistry': 'Chemistry',
-            'Dept. of Mathematics': 'Mathematics',
-            'Dept. of Physics': 'Physics',
-            'Department of Chemistry, Mathematics, Physics': 'Chemistry',
+            'computer science & engineering': 'Computer Science and Engineering',
+            'computer science and engineering': 'Computer Science and Engineering',
+            'electronics & communication engineering': 'Electronics and Communication Engineering',
+            'electronics & communication': 'Electronics and Communication Engineering',
+            'electronics and communication': 'Electronics and Communication Engineering',
+            'electronics and communication engineering': 'Electronics and Communication Engineering',
+            'dept. of chemistry': 'Chemistry',
+            'dept. of mathematics': 'Mathematics',
+            'dept. of physics': 'Physics',
+            'chemistry': 'Chemistry',
+            'mathematics': 'Mathematics',
+            'physics': 'Physics',
+            'department of chemistry, mathematics, physics': 'Chemistry',
+            'humanities and social sciences': 'Humanities and Social Sciences',
+            'forestry': 'Forestry',
+            'agricultural engineering': 'Agricultural Engineering',
+            'civil engineering': 'Civil Engineering',
+            'electrical engineering': 'Electrical Engineering',
+            'mechanical engineering': 'Mechanical Engineering',
+            'centre for management studies': 'Centre for Management Studies',
         }
 
         stdout_write_func('Seeding from CSV...')
@@ -51,9 +68,9 @@ def run_seed_data(stdout_write_func=print):
         with open(csv_path, mode='r', encoding='utf-8') as file:
             reader = csv.DictReader(file)
             for row in reader:
-                dept_name = row['Department'].strip()
+                dept_raw = row['Department'].strip().lower()
                 # Apply normalization
-                dept_name = DEPT_MAP.get(dept_name, dept_name)
+                dept_name = DEPT_MAP.get(dept_raw, row['Department'].strip())
                 
                 year_num = int(row['Year'].strip())
                 sem_num = int(row['Semester'].strip())
