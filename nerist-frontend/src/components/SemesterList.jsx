@@ -20,16 +20,21 @@ const SemesterList = ({ yearId, departmentId, onSelect }) => {
   }, [yearId, departmentId]);
 
   return (
-    <div className="p-4">
-      <h2 className="text-xl font-semibold mb-3">Select Semester</h2>
+    <div className="py-8">
       <div className="flex flex-wrap gap-4">
         {semesters.map((sem) => (
           <button
             key={sem.id}
             onClick={() => onSelect(sem)}
-            className="bg-yellow-100 px-4 py-2 rounded hover:bg-yellow-200"
+            className="group px-8 py-4 bg-white border border-gray-100 rounded-2xl shadow-sm hover-lift active:scale-95 transition-all text-left flex items-center gap-4"
           >
-            Semester {sem.number}
+            <div className="bg-blue-50 text-blue-600 w-10 h-10 rounded-xl flex items-center justify-center font-black group-hover:bg-blue-600 group-hover:text-white transition-colors">
+              {sem.number}
+            </div>
+            <div>
+              <p className="text-xs font-black text-gray-400 uppercase tracking-widest">Semester</p>
+              <p className="text-sm font-black text-gray-900 leading-none">Term {sem.number}</p>
+            </div>
           </button>
         ))}
       </div>

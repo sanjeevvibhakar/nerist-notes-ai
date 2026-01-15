@@ -5,7 +5,8 @@ import Login from './pages/Login';
 import AdminUploadPage from './pages/AdminUploadPage';
 import ForumPage from './pages/ForumPage';
 import AdminDashboard from './pages/AdminDashboard';
-import Navbar from './components/Navbar'; // Assuming Navbar should be global or per page
+import About from './pages/About';
+import Navbar from './components/Navbar';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/upload" element={<AdminUploadPage />} />
         <Route path="/forum" element={<ForumPage />} />
         <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </Router>
   );
