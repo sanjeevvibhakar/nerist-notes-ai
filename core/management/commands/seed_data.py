@@ -13,12 +13,16 @@ class Command(BaseCommand):
         self.stdout.write('--- SEEDING START ---')
         
         with transaction.atomic():
-            self.stdout.write('Deleting old data...')
+            self.stdout.write('Deleting old data (including Q&A and Materials)...')
             
             # Count before
             pre_count = Department.objects.count()
-            self.stdout.write(f'Existing departments: {pre_count}')
+            self.stdout.write(f'Found {pre_count} existing departments.')
             
+            # Explicitly delete in reverse order of dependence
+            Answer.objects.all().delete()
+            Question.objects.all().delete()
+            StudyMaterial.objects.all().delete()
             SubjectOffering.objects.all().delete()
             Semester.objects.all().delete()
             Year.objects.all().delete()
@@ -27,14 +31,17 @@ class Command(BaseCommand):
             
             # Count after
             post_count = Department.objects.count()
-            self.stdout.write(f'Departments after delete: {post_count}')
+            self.stdout.write(f'Departments after deletion: {post_count}')
             
             if post_count > 0:
-                self.stdout.write(self.style.ERROR('⚠️ FAILED TO DELETE OLD DEPARTMENTS!'))
+                self.stdout.write(self.style.ERROR('⚠️ NUCLEAR DELETE FAILED! Old departments still persist.'))
+            else:
+                self.stdout.write(self.style.SUCCESS('✅ Database successfully wiped clean.'))
 
             # Mapping for normalization
             DEPT_MAP = {
                 'Computer Science & Engineering': 'Computer Science and Engineering',
+                'Electronics & Communication Engineering': 'Electronics and Communication Engineering',
                 'Electronics & Communication': 'Electronics and Communication Engineering',
                 'Electronics and Communication': 'Electronics and Communication Engineering',
                 'Dept. of Chemistry': 'Chemistry',
