@@ -8,7 +8,23 @@ class Command(BaseCommand):
     help = 'Seeds initial data from CSV'
 
     def handle(self, *args, **kwargs):
-        self.stdout.write('Seeding data from actual_subjects.csv...')
+        self.stdout.write('Cleaning old data and seeding from actual_subjects.csv...')
+
+        # Mapping for normalization
+        DEPT_MAP = {
+            'Computer Science & Engineering': 'Computer Science and Engineering',
+            'Dept. of Chemistry': 'Chemistry',
+            'Dept. of Mathematics': 'Mathematics',
+            'Dept. of Physics': 'Physics',
+        }
+
+        # WARNING: This clears academic structure! 
+        # Materials might be deleted due to Cascade if they point to these.
+        SubjectOffering.objects.all().delete()
+        Semester.objects.all().delete()
+        Year.objects.all().delete()
+        Subject.objects.all().delete()
+        Department.objects.all().delete()
 
         # Path to CSV
         csv_path = os.path.join(os.path.dirname(__file__), 'actual_subjects.csv')
@@ -21,6 +37,9 @@ class Command(BaseCommand):
             reader = csv.DictReader(file)
             for row in reader:
                 dept_name = row['Department'].strip()
+                # Apply normalization
+                dept_name = DEPT_MAP.get(dept_name, dept_name)
+                
                 year_num = int(row['Year'].strip())
                 sem_num = int(row['Semester'].strip())
                 subject_name = row['Subject Name'].strip()

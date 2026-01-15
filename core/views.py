@@ -45,6 +45,14 @@ class SemesterList(generics.ListAPIView):
         year_id = self.kwargs['year_id']
         return Semester.objects.filter(year_id=year_id)
 
+# ✅ Semesters by Department (Skipping Year step)
+class DepartmentSemesterList(generics.ListAPIView):
+    serializer_class = SemesterSerializer
+
+    def get_queryset(self):
+        dept_id = self.kwargs['dept_id']
+        return Semester.objects.filter(year__department_id=dept_id).order_by('number')
+
 # ✅ Subjects by Semester
 class SubjectList(generics.ListAPIView):
     serializer_class = SubjectSerializer

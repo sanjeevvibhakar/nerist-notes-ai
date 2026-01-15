@@ -1,16 +1,23 @@
 import React, { useEffect, useState } from "react";
 import axios from "../api/axios";
 
-const SemesterList = ({ yearId, onSelect }) => {
+const SemesterList = ({ yearId, departmentId, onSelect }) => {
   const [semesters, setSemesters] = useState([]);
 
   useEffect(() => {
-    if (yearId) {
-      axios.get(`years/${yearId}/semesters/`)
+    let url = "";
+    if (departmentId) {
+      url = `departments/${departmentId}/semesters/`;
+    } else if (yearId) {
+      url = `years/${yearId}/semesters/`;
+    }
+
+    if (url) {
+      axios.get(url)
         .then((res) => setSemesters(res.data))
         .catch((err) => console.error("Error fetching semesters:", err));
     }
-  }, [yearId]);
+  }, [yearId, departmentId]);
 
   return (
     <div className="p-4">

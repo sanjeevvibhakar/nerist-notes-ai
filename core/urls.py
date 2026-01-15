@@ -1,7 +1,7 @@
 from django.urls import path
 from rest_framework.authtoken.views import obtain_auth_token
 from .views import (
-    DepartmentListView, YearList, SemesterList, SubjectList,
+    DepartmentListView, YearList, SemesterList, DepartmentSemesterList, SubjectList,
     StudyMaterialList, StudyMaterialUploadView,
     check_admin_status, subject_offerings_list,
     QuestionListCreateView, AnswerCreateView, QuestionRetrieveView,
@@ -12,6 +12,7 @@ from .views import (
 urlpatterns = [
     path('departments/', DepartmentListView.as_view(), name='departments'),
     path('departments/<int:dept_id>/years/', YearList.as_view(), name='years'),
+    path('departments/<int:dept_id>/semesters/', DepartmentSemesterList.as_view(), name='dept-semesters'),
     path('years/<int:year_id>/semesters/', SemesterList.as_view(), name='semesters'),
     path('semesters/<int:sem_id>/subjects/', SubjectList.as_view(), name='subjects'),
     path('subjects/<int:subject_id>/materials/', StudyMaterialList.as_view(), name='materials'),

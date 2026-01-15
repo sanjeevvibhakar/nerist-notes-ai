@@ -9,7 +9,6 @@ import MaterialList from "../components/MaterialList";
 const Home = () => {
   const [breadcrumbs, setBreadcrumbs] = useState([]);
   const [selectedDepartment, setSelectedDepartment] = useState(null);
-  const [selectedYear, setSelectedYear] = useState(null);
   const [selectedSemester, setSelectedSemester] = useState(null);
   const [selectedSubject, setSelectedSubject] = useState(null);
 
@@ -18,36 +17,24 @@ const Home = () => {
     if (index === -1) {
       // Home
       setSelectedDepartment(null);
-      setSelectedYear(null);
       setSelectedSemester(null);
       setSelectedSubject(null);
       setBreadcrumbs([]);
     } else if (index === 0) {
       // Department selected
-      setSelectedYear(null);
       setSelectedSemester(null);
       setSelectedSubject(null);
       setBreadcrumbs(breadcrumbs.slice(0, 1));
     } else if (index === 1) {
-      // Year selected
-      setSelectedSemester(null);
-      setSelectedSubject(null);
-      setBreadcrumbs(breadcrumbs.slice(0, 2));
-    } else if (index === 2) {
       // Semester selected
       setSelectedSubject(null);
-      setBreadcrumbs(breadcrumbs.slice(0, 3));
+      setBreadcrumbs(breadcrumbs.slice(0, 2));
     }
   };
 
   const selectDept = (dept) => {
     setSelectedDepartment(dept);
     setBreadcrumbs([{ label: dept.name, id: dept.id }]);
-  };
-
-  const selectYear = (year) => {
-    setSelectedYear(year);
-    setBreadcrumbs([...breadcrumbs, { label: `Year ${year.number}`, id: year.id }]);
   };
 
   const selectSem = (sem) => {
@@ -65,10 +52,10 @@ const Home = () => {
 
       <div className="container mx-auto px-4 py-8 max-w-5xl">
         {/* Breadcrumbs */}
-        <div className="flex items-center text-sm mb-8 text-gray-600 bg-white p-3 rounded shadow-sm">
+        <div className="flex items-center text-sm mb-8 text-gray-600 bg-white p-3 rounded shadow-sm overflow-x-auto">
           <button
             onClick={() => handleBreadcrumbClick(-1)}
-            className="hover:text-blue-600 font-medium px-2"
+            className="hover:text-blue-600 font-medium px-2 whitespace-nowrap"
           >
             🏠 Home
           </button>
@@ -78,7 +65,7 @@ const Home = () => {
               <span className="text-gray-400">/</span>
               <button
                 onClick={() => handleBreadcrumbClick(idx)}
-                className={`px-2 hover:text-blue-600 ${idx === breadcrumbs.length - 1 && !selectedSubject ? 'font-bold text-gray-800' : ''}`}
+                className={`px-2 hover:text-blue-600 whitespace-nowrap ${idx === breadcrumbs.length - 1 && !selectedSubject ? 'font-bold text-gray-800' : ''}`}
               >
                 {crumb.label}
               </button>
@@ -88,7 +75,7 @@ const Home = () => {
           {selectedSubject && (
             <>
               <span className="text-gray-400">/</span>
-              <span className="px-2 font-bold text-gray-800">{selectedSubject.name}</span>
+              <span className="px-2 font-bold text-gray-800 whitespace-nowrap">{selectedSubject.name}</span>
             </>
           )}
         </div>
@@ -100,23 +87,31 @@ const Home = () => {
               <h2 className="text-2xl font-bold text-gray-800 text-center mb-8">Select Department</h2>
               <DepartmentList onSelect={selectDept} />
             </div>
-          ) : !selectedYear ? (
-            <div className="space-y-4">
-              <h2 className="text-2xl font-bold text-gray-800 mb-6">Select Year</h2>
-              <YearList departmentId={selectedDepartment.id} onSelect={selectYear} />
-            </div>
           ) : !selectedSemester ? (
             <div className="space-y-4">
-              <h2 className="text-2xl font-bold text-gray-800 mb-6">Select Semester</h2>
-              <SemesterList yearId={selectedYear.id} onSelect={selectSem} />
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-2xl font-bold text-gray-800">Select Semester</h2>
+                <button onClick={() => handleBreadcrumbClick(-1)} className="text-blue-600 hover:underline text-sm">← Back to Departments</button>
+              </div>
+              <SemesterList departmentId={selectedDepartment.id} onSelect={selectSem} />
             </div>
           ) : !selectedSubject ? (
             <div className="space-y-4">
-              <h2 className="text-2xl font-bold text-gray-800 mb-6">Select Subject</h2>
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-2xl font-bold text-gray-800">Select Subject</h2>
+                <button onClick={() => handleBreadcrumbClick(0)} className="text-blue-600 hover:underline text-sm">← Back to Semesters</button>
+              </div>
               <SubjectList semesterId={selectedSemester.id} onSelect={selectSub} />
             </div>
           ) : (
             <div className="animate-fade-in-up">
+              <div className="flex items-center justify-between mb-6 border-b pb-4">
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-800">{selectedSubject.name}</h2>
+                  <p className="text-gray-500 text-sm">{selectedDepartment.name} • Semester {selectedSemester.number}</p>
+                </div>
+                <button onClick={() => handleBreadcrumbClick(1)} className="text-blue-600 hover:underline text-sm">← Select Different Subject</button>
+              </div>
               <MaterialList subjectId={selectedSubject.id} />
             </div>
           )}
