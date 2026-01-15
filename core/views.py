@@ -15,6 +15,7 @@ from .serializers import (
     YearSerializer,
     SemesterSerializer,
     SubjectSerializer,
+    SubjectOfferingSerializer,
     StudyMaterialSerializer,
     StudyMaterialUploadSerializer,
     QuestionSerializer,
