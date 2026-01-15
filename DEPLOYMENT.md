@@ -18,7 +18,14 @@ This guide explains how to deploy the **Django Backend** to Render and the **Rea
         *   `PYTHON_VERSION`: `3.9.0` (or similar)
         *   `SECRET_KEY`: (Generate a random string)
         *   `DEBUG`: `False` (Important for security)
-        *   `DATABASE_URL`: (If you use Render's PostgreSQL, otherwise it will use SQLite which resets on deploy. For permanent data, add a **Render Disk** or use **Render Postgres**).
+        *   `DATABASE_URL`: **See Step 1.1 below**
+
+### 🛢️ 1.1 Database Setup (Important)
+Render provides a free PostgreSQL instance.
+1.  On Render.com dashboard, click **New +** -> **PostgreSQL**.
+2.  Name it (e.g., `nerist-db`), choose a region (e.g., Singapore/US), and select **Free Plan**.
+3.  Once created, copy the **Internal Database URL** (if deploying backend on Render) or **External Database URL**.
+4.  Paste this URL into the `DATABASE_URL` environment variable in your Web Service settings.
 
 ---
 

@@ -62,13 +62,20 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'nerist_portal.wsgi.application'
 
-# ✅ SQLite Database
+import dj_database_url
+
+# ✅ Database (SQLite locally, Postgres in Production)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# Override with DATABASE_URL if present (Render/Vercel)
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
+
 
 # ✅ Password Validators
 AUTH_PASSWORD_VALIDATORS = [
