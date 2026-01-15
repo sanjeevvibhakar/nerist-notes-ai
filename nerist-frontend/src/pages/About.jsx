@@ -30,7 +30,7 @@ const About = () => {
                         <div className="relative group">
                             <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
                             <img
-                                src="https://github.com/vibhakar2007.png"
+                                src="https://github.com/sanjeevvibhakar.png"
                                 alt="Sanjeev Vibhakar"
                                 className="relative w-48 h-48 rounded-full object-cover border-4 border-white shadow-xl"
                             />
@@ -43,14 +43,14 @@ const About = () => {
                                 <span className="px-3 py-1 bg-purple-50 text-purple-700 text-xs font-bold rounded-full border border-purple-100">Full Stack</span>
                             </div>
 
-                            <h3 className="text-2xl font-black text-gray-900 mb-4 font-mono leading-none">@vibhakar2007</h3>
+                            <h3 className="text-2xl font-black text-gray-900 mb-4 font-mono leading-none">@sanjeevvibhakar</h3>
                             <p className="text-gray-600 leading-relaxed mb-8 font-medium italic">
                                 "Creating clean, scalable solutions across front-end, back-end, and AI models. I'm on a mission to organize academic resources and make learning accessible to everyone."
                             </p>
 
                             <div className="flex justify-center md:justify-start gap-4">
                                 <a
-                                    href="https://github.com/vibhakar2007"
+                                    href="https://github.com/sanjeevvibhakar"
                                     target="_blank"
                                     rel="noreferrer"
                                     className="bg-gray-900 text-white px-6 py-3 rounded-2xl font-bold text-sm hover:bg-black transition-all shadow-lg active:scale-95 flex items-center gap-2"
