@@ -13,18 +13,29 @@ class Command(BaseCommand):
         # Mapping for normalization
         DEPT_MAP = {
             'Computer Science & Engineering': 'Computer Science and Engineering',
+            'Electronics & Communication': 'Electronics and Communication Engineering',
+            'Electronics and Communication': 'Electronics and Communication Engineering',
             'Dept. of Chemistry': 'Chemistry',
             'Dept. of Mathematics': 'Mathematics',
             'Dept. of Physics': 'Physics',
+            'Department of Chemistry, Mathematics, Physics': 'Chemistry', # Adjusting based on logic
         }
 
-        # WARNING: This clears academic structure! 
-        # Materials might be deleted due to Cascade if they point to these.
-        SubjectOffering.objects.all().delete()
-        Semester.objects.all().delete()
-        Year.objects.all().delete()
-        Subject.objects.all().delete()
-        Department.objects.all().delete()
+        self.stdout.write('Deleting old data...')
+        count, _ = SubjectOffering.objects.all().delete()
+        self.stdout.write(f'Deleted {count} SubjectOfferings')
+        
+        count, _ = Semester.objects.all().delete()
+        self.stdout.write(f'Deleted {count} Semesters')
+        
+        count, _ = Year.objects.all().delete()
+        self.stdout.write(f'Deleted {count} Years')
+        
+        count, _ = Subject.objects.all().delete()
+        self.stdout.write(f'Deleted {count} Subjects')
+        
+        count, _ = Department.objects.all().delete()
+        self.stdout.write(f'Deleted {count} Departments')
 
         # Path to CSV
         csv_path = os.path.join(os.path.dirname(__file__), 'actual_subjects.csv')
