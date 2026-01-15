@@ -75,7 +75,7 @@ const Home = () => {
           {selectedSubject && (
             <>
               <span className="text-gray-400">/</span>
-              <span className="px-2 font-bold text-gray-800 whitespace-nowrap">{selectedSubject.name}</span>
+              <span className="px-2 font-bold text-gray-800 whitespace-nowrap">{selectedSubject.subject_name}</span>
             </>
           )}
         </div>
@@ -107,12 +107,12 @@ const Home = () => {
             <div className="animate-fade-in-up">
               <div className="flex items-center justify-between mb-6 border-b pb-4">
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-800">{selectedSubject.name}</h2>
+                  <h2 className="text-2xl font-bold text-gray-800">{selectedSubject.subject_name}</h2>
                   <p className="text-gray-500 text-sm">{selectedDepartment.name} • Semester {selectedSemester.number}</p>
                 </div>
                 <button onClick={() => handleBreadcrumbClick(1)} className="text-blue-600 hover:underline text-sm">← Select Different Subject</button>
               </div>
-              <MaterialList subjectId={selectedSubject.id} />
+              <MaterialList offeringId={selectedSubject.id} />
             </div>
           )}
         </div>

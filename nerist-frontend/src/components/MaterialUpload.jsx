@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "../api/axios";
 
-const MaterialUpload = ({ subjectId, onUploadSuccess }) => {
+const MaterialUpload = ({ offeringId, onUploadSuccess }) => {
   const [title, setTitle] = useState("");
   const [type, setType] = useState("notes");
   const [file, setFile] = useState(null);
@@ -11,7 +11,7 @@ const MaterialUpload = ({ subjectId, onUploadSuccess }) => {
     if (!file || !title) return alert("Fill all fields");
 
     const formData = new FormData();
-    formData.append("subject", subjectId);
+    formData.append("subject_offering", offeringId);
     formData.append("title", title);
     formData.append("material_type", type);
     formData.append("file", file);

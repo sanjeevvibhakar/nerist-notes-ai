@@ -15,14 +15,14 @@ const SubjectList = ({ semesterId, onSelect }) => {
   return (
     <div className="p-4">
       <h2 className="text-xl font-semibold mb-3">Select Subject</h2>
-      <div className="flex flex-wrap gap-4">
-        {subjects.map((subject) => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        {subjects.map((offering) => (
           <button
-            key={subject.id}
-            onClick={() => onSelect(subject)}
-            className="bg-blue-100 px-4 py-2 rounded hover:bg-blue-200"
+            key={offering.id}
+            onClick={() => onSelect(offering)}
+            className="text-left bg-white border border-blue-100 p-4 rounded-xl shadow-sm hover:shadow-md hover:border-blue-300 transition-all duration-200 group"
           >
-            {subject.name}
+            <p className="font-semibold text-gray-800 group-hover:text-blue-600 uppercase text-sm tracking-tight">{offering.subject_name}</p>
           </button>
         ))}
       </div>

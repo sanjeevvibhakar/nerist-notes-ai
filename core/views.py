@@ -53,22 +53,22 @@ class DepartmentSemesterList(generics.ListAPIView):
         dept_id = self.kwargs['dept_id']
         return Semester.objects.filter(year__department_id=dept_id).order_by('number')
 
-# ✅ Subjects by Semester
+# ✅ Subjects by Semester (Returning Offerings for context)
 class SubjectList(generics.ListAPIView):
-    serializer_class = SubjectSerializer
+    serializer_class = SubjectOfferingSerializer
 
     def get_queryset(self):
         sem_id = self.kwargs['sem_id']
-        return Subject.objects.filter(subjectoffering__semester_id=sem_id).distinct()
+        return SubjectOffering.objects.filter(semester_id=sem_id).select_related('subject')
 
-# ✅ Study Materials by Subject
+# ✅ Study Materials by Subject Offering
 class StudyMaterialList(generics.ListAPIView):
     serializer_class = StudyMaterialSerializer
     permission_classes = [AllowAny]
 
     def get_queryset(self):
-        subject_id = self.kwargs['subject_id']
-        queryset = StudyMaterial.objects.filter(subject_offering__subject__id=subject_id)
+        offering_id = self.kwargs['offering_id']
+        queryset = StudyMaterial.objects.filter(subject_offering_id=offering_id)
         # Show only verified materials to students/public
         if not self.request.user.is_staff:
             queryset = queryset.filter(is_verified=True)

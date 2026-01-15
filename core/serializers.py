@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Department, Year, Semester, Subject, StudyMaterial, Question, Answer
+from .models import Department, Year, Semester, Subject, SubjectOffering, StudyMaterial, Question, Answer
 
 class DepartmentSerializer(serializers.ModelSerializer):
     class Meta:
@@ -23,6 +23,14 @@ class SubjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Subject
         fields = '__all__'
+
+
+class SubjectOfferingSerializer(serializers.ModelSerializer):
+    subject_name = serializers.CharField(source='subject.name', read_only=True)
+    
+    class Meta:
+        model = SubjectOffering
+        fields = ['id', 'subject', 'semester', 'subject_name']
 
 
 class StudyMaterialSerializer(serializers.ModelSerializer):
