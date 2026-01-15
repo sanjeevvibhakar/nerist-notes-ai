@@ -5,7 +5,7 @@ from .views import (
     StudyMaterialList, StudyMaterialUploadView,
     check_admin_status, subject_offerings_list,
     QuestionListCreateView, AnswerCreateView, QuestionRetrieveView,
-    PendingMaterialList, verify_material, ChatWithNoteView
+    PendingMaterialList, verify_material, admin_manual_seed, ChatWithNoteView
 )
 
 
@@ -27,5 +27,6 @@ urlpatterns = [
     path('questions/<int:question_id>/answer/', AnswerCreateView.as_view(), name='post-answer'),
     path('admin/pending-materials/', PendingMaterialList.as_view(), name='pending-materials'),
     path('admin/verify-material/<int:material_id>/', verify_material, name='verify-material'),
+    path('admin/manual-seed/', admin_manual_seed, name='manual-seed'),
     path('chat/<int:note_id>/', ChatWithNoteView.as_view(), name='chat-with-note'),
 ]

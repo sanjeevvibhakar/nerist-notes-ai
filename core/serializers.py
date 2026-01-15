@@ -34,9 +34,12 @@ class SubjectOfferingSerializer(serializers.ModelSerializer):
 
 
 class StudyMaterialSerializer(serializers.ModelSerializer):
+    subject_name = serializers.CharField(source='subject_offering.subject.name', read_only=True)
+    semester_num = serializers.IntegerField(source='subject_offering.semester.number', read_only=True)
+
     class Meta:
         model = StudyMaterial
-        fields = '__all__'
+        fields = ['id', 'subject_offering', 'subject_name', 'semester_num', 'material_type', 'title', 'file', 'uploaded_at', 'is_verified', 'uploaded_by']
 
 
 class StudyMaterialUploadSerializer(serializers.ModelSerializer):

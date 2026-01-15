@@ -5,6 +5,7 @@ from rest_framework import generics, status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .utils_ai import get_answer_from_document
+from .seeding import run_seed_data
 from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.permissions import IsAdminUser, AllowAny, IsAuthenticated
 from rest_framework.decorators import api_view, permission_classes
@@ -106,6 +107,18 @@ def verify_material(request, material_id):
     material.is_verified = True
     material.save()
     return Response({"message": "Material verified successfully!"})
+
+@api_view(['POST'])
+@permission_classes([IsAdminUser])
+def admin_manual_seed(request):
+    logs = []
+    def log_to_list(msg):
+        logs.append(msg)
+    
+    success = run_seed_data(stdout_write_func=log_to_list)
+    if success:
+        return Response({"message": "Seeding successful!", "logs": logs})
+    return Response({"message": "Seeding failed.", "logs": logs}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 # ✅ AI Chat View
 class ChatWithNoteView(APIView):
