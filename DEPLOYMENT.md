@@ -28,6 +28,10 @@ Render provides a free PostgreSQL instance.
 2.  Name it (e.g., `nerist-db`), choose a region (e.g., Singapore/US), and select **Free Plan**.
 3.  Once created, copy the **Internal Database URL** (if deploying backend on Render) or **External Database URL**.
 4.  Paste this URL into the `DATABASE_URL` environment variable in your Web Service settings.
+5.  **Seed Initial Data:**
+    *   On the Render dashboard for your Web Service, click the **Shell** tab.
+    *   Run: `python manage.py seed_data`
+    *   This will populate the initial Departments and Subjects.
 
 ---
 
