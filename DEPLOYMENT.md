@@ -22,6 +22,11 @@ This guide explains how to deploy the **Django Backend** to Render and the **Rea
         *   `DEBUG`: `False` (Important for security)
         *   `DATABASE_URL`: **See Step 1.1 below**
 
+### 🔑 Login Credentials (After Seeding)
+Once the build is complete, use these default credentials to test:
+*   **Admin:** `admin` / `admin123`
+*   **Student:** `student` / `student123`
+
 ### 🛢️ 1.1 Database Setup (Important)
 Render provides a free PostgreSQL instance.
 1.  On Render.com dashboard, click **New +** -> **PostgreSQL**.

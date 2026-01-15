@@ -1,4 +1,5 @@
 from django.core.management.base import BaseCommand
+from django.contrib.auth.models import User
 from core.models import Department, Year, Semester, Subject, SubjectOffering
 
 class Command(BaseCommand):
@@ -29,5 +30,14 @@ class Command(BaseCommand):
             if i == 3:
                 sub, _ = Subject.objects.get_or_create(name='Operating Systems')
                 SubjectOffering.objects.get_or_create(subject=sub, semester=sem1)
+
+        # 3. Create Default Users (if they don't exist)
+        if not User.objects.filter(username='admin').exists():
+            User.objects.create_superuser('admin', 'admin@example.com', 'admin123')
+            self.stdout.write(self.style.SUCCESS('Created superuser: admin'))
+
+        if not User.objects.filter(username='student').exists():
+            User.objects.create_user('student', 'student@example.com', 'student123')
+            self.stdout.write(self.style.SUCCESS('Created user: student'))
 
         self.stdout.write(self.style.SUCCESS('Successfully seeded data!'))
