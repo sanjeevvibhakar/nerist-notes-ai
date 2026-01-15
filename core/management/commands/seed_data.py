@@ -1,37 +1,46 @@
+import csv
+import os
 from django.core.management.base import BaseCommand
 from django.contrib.auth.models import User
 from core.models import Department, Year, Semester, Subject, SubjectOffering
 
 class Command(BaseCommand):
-    help = 'Seeds initial data for the portal'
+    help = 'Seeds initial data from CSV'
 
     def handle(self, *args, **kwargs):
-        self.stdout.write('Seeding data...')
+        self.stdout.write('Seeding data from actual_subjects.csv...')
 
-        # 1. Create Departments
-        cse, _ = Department.objects.get_or_create(name='Computer Science & Engineering')
-        ece, _ = Department.objects.get_or_create(name='Electronics & Communication')
-        me, _ = Department.objects.get_or_create(name='Mechanical Engineering')
+        # Path to CSV
+        csv_path = os.path.join(os.path.dirname(__file__), 'actual_subjects.csv')
+        
+        if not os.path.exists(csv_path):
+            self.stdout.write(self.style.ERROR(f'CSV file not found at {csv_path}'))
+            return
 
-        # 2. Create Years for CSE (as example)
-        for i in range(1, 5):
-            year, _ = Year.objects.get_or_create(department=cse, number=i)
-            # Create Semesters for each year
-            sem1, _ = Semester.objects.get_or_create(year=year, number=(i*2)-1)
-            sem2, _ = Semester.objects.get_or_create(year=year, number=(i*2))
+        with open(csv_path, mode='r', encoding='utf-8') as file:
+            reader = csv.DictReader(file)
+            for row in reader:
+                dept_name = row['Department'].strip()
+                year_num = int(row['Year'].strip())
+                sem_num = int(row['Semester'].strip())
+                subject_name = row['Subject Name'].strip()
 
-            # Add sample subjects for Semesters
-            if i == 1:
-                sub1, _ = Subject.objects.get_or_create(name='Physics')
-                sub2, _ = Subject.objects.get_or_create(name='Mathematics-I')
-                SubjectOffering.objects.get_or_create(subject=sub1, semester=sem1)
-                SubjectOffering.objects.get_or_create(subject=sub2, semester=sem1)
-            
-            if i == 3:
-                sub, _ = Subject.objects.get_or_create(name='Operating Systems')
-                SubjectOffering.objects.get_or_create(subject=sub, semester=sem1)
+                # 1. Get or Create Department
+                dept, _ = Department.objects.get_or_create(name=dept_name)
 
-        # 3. Create Default Users (if they don't exist)
+                # 2. Get or Create Year
+                year, _ = Year.objects.get_or_create(department=dept, number=year_num)
+
+                # 3. Get or Create Semester
+                sem, _ = Semester.objects.get_or_create(year=year, number=sem_num)
+
+                # 4. Get or Create Subject
+                subject, _ = Subject.objects.get_or_create(name=subject_name)
+
+                # 5. Link Subject to Semester via SubjectOffering
+                SubjectOffering.objects.get_or_create(subject=subject, semester=sem)
+
+        # 6. Create Default Users (if they don't exist)
         if not User.objects.filter(username='admin').exists():
             User.objects.create_superuser('admin', 'admin@example.com', 'admin123')
             self.stdout.write(self.style.SUCCESS('Created superuser: admin'))
@@ -40,4 +49,4 @@ class Command(BaseCommand):
             User.objects.create_user('student', 'student@example.com', 'student123')
             self.stdout.write(self.style.SUCCESS('Created user: student'))
 
-        self.stdout.write(self.style.SUCCESS('Successfully seeded data!'))
+        self.stdout.write(self.style.SUCCESS('Successfully populated database from CSV!'))
