@@ -1,8 +1,13 @@
 from django.urls import path
+from rest_framework.authtoken.views import obtain_auth_token
 from .views import (
-    DepartmentListView, YearList, SemesterList,
-    SubjectList, StudyMaterialList, StudyMaterialUploadView
+    DepartmentListView, YearList, SemesterList, SubjectList,
+    StudyMaterialList, StudyMaterialUploadView,
+    check_admin_status, subject_offerings_list,
+    QuestionListCreateView, AnswerCreateView, QuestionRetrieveView,
+    PendingMaterialList, verify_material, ChatWithNoteView
 )
+
 
 urlpatterns = [
     path('departments/', DepartmentListView.as_view(), name='departments'),
@@ -11,4 +16,15 @@ urlpatterns = [
     path('semesters/<int:sem_id>/subjects/', SubjectList.as_view(), name='subjects'),
     path('subjects/<int:subject_id>/materials/', StudyMaterialList.as_view(), name='materials'),
     path('materials/upload/', StudyMaterialUploadView.as_view(), name='material-upload'),
+    path('auth/login/', obtain_auth_token, name='api_token_auth'),
+    path('auth/status/', check_admin_status, name='check-admin-status'),
+    path('subject-offerings/', subject_offerings_list, name='subject_offerings_list'),  # ✅ Fixed
+    path('questions/', QuestionListCreateView.as_view(), name='questions'),
+    path('questions/<int:pk>/', QuestionRetrieveView.as_view(), name='question-detail'),
+    path('questions/<int:question_id>/answer/', AnswerCreateView.as_view(), name='post-answer'),
+    path('questions/<int:pk>/', QuestionRetrieveView.as_view(), name='question-detail'),
+    path('questions/<int:question_id>/answer/', AnswerCreateView.as_view(), name='post-answer'),
+    path('admin/pending-materials/', PendingMaterialList.as_view(), name='pending-materials'),
+    path('admin/verify-material/<int:material_id>/', verify_material, name='verify-material'),
+    path('chat/<int:note_id>/', ChatWithNoteView.as_view(), name='chat-with-note'),
 ]

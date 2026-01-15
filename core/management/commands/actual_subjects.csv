@@ -1,0 +1,410 @@
+Department,Year,Semester,Subject Name
+Forestry,1,1,Information and Communication Technology
+Forestry,1,1,Plant Biochemistry
+Forestry,1,1,Communication Skills and Personality Development
+Forestry,1,1,Basic Mathematics
+Forestry,1,1,Introduction to Forestry
+Forestry,1,1,Dendrology
+Forestry,1,1,Introduction to Agronomy and Horticulture
+Forestry,1,1,Wood Anatomy
+Forestry,1,1,NCC – I / NSS – I
+Forestry,1,1,Physical Education – I
+Forestry,1,2,Statistical Methods and Experimental Designs
+Forestry,1,2,Plant Physiology
+Forestry,1,2,Theory and Practice of Silviculture
+Forestry,1,2,Geology and Soils
+Forestry,1,2,Wildlife Biology
+Forestry,1,2,Forest Protection
+Forestry,1,2,Plant Cytology and Genetics
+Forestry,1,2,NCC – II / NSS – II
+Forestry,1,2,Physical Education – II
+Forestry,2,3,Forest Survey and Engineering
+Forestry,2,3,Environmental Studies and Disaster Management
+Forestry,2,3,Ornithology and Herpatology
+Forestry,2,3,Ethnobotany, Medicinal and Aromatic plants
+Forestry,2,3,Tree Improvement
+Forestry,2,3,Principles of Agroforestry
+Forestry,2,3,Forest Mensuration
+Forestry,2,3,NCC – III / NSS – III
+Forestry,2,3,Physical Education – III
+Forestry,2,4,Forest Management
+Forestry,2,4,Silviculture of Indian Trees
+Forestry,2,4,Wood Products and Utilization
+Forestry,2,4,Forest Ecology and Biodiversity
+Forestry,2,4,Soil Biology and Fertility
+Forestry,2,4,Seed Technology and Nursery Management
+Forestry,2,4,Forest Tribology and Anthropology
+Forestry,2,4,Rangeland and Livestock Management
+Forestry,2,4,Study Tour of State Forest
+Forestry,3,5,Forest Hydrology and Watershed Management
+Forestry,3,5,Entrepreneurship Development and Business Management
+Forestry,3,5,Climate Science
+Forestry,3,5,Plantation Forestry
+Forestry,3,5,Forest Extension and Community Forestry
+Forestry,3,5,Logging and Ergonomics
+Forestry,3,5,Geomatics
+Forestry,3,5,Experiential Learning
+Forestry,3,6,Forest Economics and Marketing
+Forestry,3,6,Marketing of Non-Timber Forest Products
+Forestry,3,6,Wood Science and Technology
+Forestry,3,6,Forest Laws, Legislation and Policies
+Forestry,3,6,Certification of Forest Products
+Forestry,3,6,Recreation and Urban Forestry
+Forestry,3,6,Wildlife Management
+Forestry,3,6,Experiential Learning
+Forestry,3,6,All India Study Tour
+Forestry,4,7,Forestry Work Experience
+Forestry,4,8,Agricultural Informatics
+Forestry,4,8,Forest Biotechnology
+Forestry,4,8,Agroforestry Systems and Management
+Forestry,4,8,Forest Inventory and Yield Prediction
+Forestry,4,8,Restoration Ecology
+Forestry,4,8,Project Work and Dissertation
+Forestry,4,8,Extra-Curricular Activities and Discipline
+Agricultural Engineering,1,1,Engineering Physics
+Agricultural Engineering,1,1,Mathematics – I
+Agricultural Engineering,1,1,Basic Electrical Engineering
+Agricultural Engineering,1,1,Engineering Graphics and Design
+Agricultural Engineering,1,1,Soil Science and Crop Production
+Agricultural Engineering,1,2,Engineering Chemistry – B
+Agricultural Engineering,1,2,Mathematics – II
+Agricultural Engineering,1,2,Programming for Problem Solving
+Agricultural Engineering,1,2,Workshop Practice
+Agricultural Engineering,1,2,Communication Skills
+Agricultural Engineering,1,2,Engineering Thermodynamics
+Agricultural Engineering,1,2,Environmental Science (Audit)
+Agricultural Engineering,2,3,Mathematics – III
+Agricultural Engineering,2,3,Engineering Mechanics
+Agricultural Engineering,2,3,Basic Electronics Engineering
+Agricultural Engineering,2,3,Agricultural Surveying
+Agricultural Engineering,2,3,Soil Mechanics
+Agricultural Engineering,2,3,Agricultural Process Engineering
+Agricultural Engineering,2,4,Entrepreneurship and Startups
+Agricultural Engineering,2,4,Indian Constitution (Audit)
+Agricultural Engineering,2,4,Fluid Mechanics
+Agricultural Engineering,2,4,Strength of Materials
+Agricultural Engineering,2,4,IC Engines
+Agricultural Engineering,2,4,Soil and Water Conservation Engineering
+Agricultural Engineering,2,4,Transfer Processes in Food Engineering
+Agricultural Engineering,2,4,Renewable Sources of Energy
+Agricultural Engineering,3,5,Principles of Economics
+Agricultural Engineering,3,5,Essence of Indian Knowledge and Tradition (Audit)
+Agricultural Engineering,3,5,Irrigation Engineering
+Agricultural Engineering,3,5,Drainage Engineering
+Agricultural Engineering,3,5,Farm Tractors
+Agricultural Engineering,3,5,Machine Theory and Design
+Agricultural Engineering,3,5,Unit Operations in Dairy and Food Engineering
+Agricultural Engineering,3,5,Study Tour (Audit)
+Agricultural Engineering,3,6,Organizational Behaviour
+Agricultural Engineering,3,6,Open Elective – I (From MOOC)
+Agricultural Engineering,3,6,Hydrology and Watershed Management
+Agricultural Engineering,3,6,Farm Machinery – I
+Agricultural Engineering,3,6,Food Process Technology
+Agricultural Engineering,3,6,Programme Elective – I
+Agricultural Engineering,3,6,Programme Elective – II
+Agricultural Engineering,3,6,Seminar
+Agricultural Engineering,4,7,Open Elective – II
+Agricultural Engineering,4,7,Tractor Systems and Performance
+Agricultural Engineering,4,7,Groundwater and Pump Engineering
+Agricultural Engineering,4,7,Farm Produce and Storage Engineering
+Agricultural Engineering,4,7,Programme Elective – III
+Agricultural Engineering,4,7,Programme Elective – IV
+Agricultural Engineering,4,7,Project – I
+Agricultural Engineering,4,7,Industrial Training (Audit)
+Agricultural Engineering,4,8,Open Elective – III (From MOOC)
+Agricultural Engineering,4,8,Open Elective – IV
+Agricultural Engineering,4,8,Farm Machinery – II
+Agricultural Engineering,4,8,Programme Elective – V
+Agricultural Engineering,4,8,Programme Elective – VI
+Agricultural Engineering,4,8,Project – II
+Agricultural Engineering,4,8,Extra-Curricular Activities and Discipline
+Civil Engineering,1,1,Introduction to Mechanics
+Civil Engineering,1,1,Mathematics – I
+Civil Engineering,1,1,Basic Electrical Engineering
+Civil Engineering,1,1,Engineering Graphics and Design
+Civil Engineering,1,1,Biology for Engineers
+Civil Engineering,1,2,Engineering Chemistry – B
+Civil Engineering,1,2,Mathematics – II
+Civil Engineering,1,2,Programming for Problem Solving
+Civil Engineering,1,2,Workshop Practice
+Civil Engineering,1,2,Communication Skills
+Civil Engineering,1,2,Engineering Mechanics
+Civil Engineering,2,3,Mathematics – III
+Civil Engineering,2,3,Basic Electronics Engineering
+Civil Engineering,2,3,Mechanics of Solid
+Civil Engineering,2,3,Introduction to Fluid Mechanics
+Civil Engineering,2,3,Surveying and Geomatics
+Civil Engineering,2,3,Geotechnical Engineering – I
+Civil Engineering,2,3,Transportation Engineering – I
+Civil Engineering,2,3,Environmental Engineering – I
+Civil Engineering,2,4,Entrepreneurship and Startups
+Civil Engineering,2,4,Indian Constitution (Audit)
+Civil Engineering,2,4,Instrumentation and Sensor Technologies for Civil Engineering Applications
+Civil Engineering,2,4,Energy Science and Engineering
+Civil Engineering,2,4,Structural Analysis and Design of Steel Structures
+Civil Engineering,2,4,Design of RCC Structures
+Civil Engineering,2,4,Hydrology and Water Resources Engineering
+Civil Engineering,2,4,Computer-aided Civil Engineering Drawing
+Civil Engineering,3,5,Principles of Economics
+Civil Engineering,3,5,Essence of Indian Knowledge and Tradition (Audit)
+Civil Engineering,3,5,Structural Analysis
+Civil Engineering,3,5,Geotechnical Engineering – II
+Civil Engineering,3,5,Environmental Engineering – II
+Civil Engineering,3,5,Transportation Engineering – II
+Civil Engineering,3,5,Materials Testing and Evaluation
+Civil Engineering,3,5,Disaster Preparedness and Planning
+Civil Engineering,3,5,Study Tour (Audit)
+Civil Engineering,3,6,Organizational Behaviour
+Civil Engineering,3,6,Open Elective – I (From MOOC)
+Civil Engineering,3,6,Construction Engineering & Management
+Civil Engineering,3,6,Programme Elective – I
+Civil Engineering,3,6,Programme Elective – II
+Civil Engineering,3,6,Programme Elective – III
+Civil Engineering,3,6,Programme Elective – IV
+Civil Engineering,3,6,Seminar
+Civil Engineering,4,7,Open Elective – II
+Civil Engineering,4,7,Engineering Economics and Estimation
+Civil Engineering,4,7,Engineering Geology
+Civil Engineering,4,7,Programme Elective – V
+Civil Engineering,4,7,Programme Elective – VI
+Civil Engineering,4,7,Project – I
+Civil Engineering,4,7,Industrial Training
+Civil Engineering,4,8,Open Elective – III (From MOOC)
+Civil Engineering,4,8,Open Elective – IV
+Civil Engineering,4,8,Programme Elective – VII
+Civil Engineering,4,8,Programme Elective – VIII
+Civil Engineering,4,8,Project – II
+Civil Engineering,4,8,Extra-Curricular Activities and Discipline
+Computer Science and Engineering,1,1,Quantum Mechanics for Engineers
+Computer Science and Engineering,1,1,Mathematics – I
+Computer Science and Engineering,1,1,Basic Electrical Engineering
+Computer Science and Engineering,1,1,Engineering Graphics and Design
+Computer Science and Engineering,1,1,Biology for Engineers
+Computer Science and Engineering,1,2,Engineering Chemistry – A
+Computer Science and Engineering,1,2,Mathematics – II
+Computer Science and Engineering,1,2,Programming for Problem Solving
+Computer Science and Engineering,1,2,Workshop Practice
+Computer Science and Engineering,1,2,Communication Skills
+Computer Science and Engineering,1,2,Environmental Science (Audit)
+Computer Science and Engineering,2,3,Mathematics – III
+Computer Science and Engineering,2,3,Engineering Mechanics
+Computer Science and Engineering,2,3,Basic Electronics Engineering
+Computer Science and Engineering,2,3,Digital Logic Design
+Computer Science and Engineering,2,3,Data Structure and Algorithms
+Computer Science and Engineering,2,3,Programming Tools and Techniques
+Computer Science and Engineering,2,4,Entrepreneurship and Startups
+Computer Science and Engineering,2,4,Indian Constitution (Audit)
+Computer Science and Engineering,2,4,Discrete Mathematics
+Computer Science and Engineering,2,4,Computer Organization and Architecture
+Computer Science and Engineering,2,4,Programming in Java
+Computer Science and Engineering,2,4,Design and Analysis of Algorithms
+Computer Science and Engineering,3,5,Principles of Economics
+Computer Science and Engineering,3,5,Essence of Indian Knowledge and Tradition (Audit)
+Computer Science and Engineering,3,5,Signals and Systems
+Computer Science and Engineering,3,5,Database Management Systems
+Computer Science and Engineering,3,5,Formal Language and Automata Theory
+Computer Science and Engineering,3,5,Operating Systems
+Computer Science and Engineering,3,5,Microprocessors
+Computer Science and Engineering,3,5,Study Tour (Audit)
+Computer Science and Engineering,3,6,Organizational Behaviour
+Computer Science and Engineering,3,6,Open Elective – I (From MOOC)
+Computer Science and Engineering,3,6,Programme Elective – I
+Computer Science and Engineering,3,6,Programme Elective – II
+Computer Science and Engineering,3,6,Compiler Design
+Computer Science and Engineering,3,6,Computer Networks
+Computer Science and Engineering,3,6,Seminar
+Computer Science and Engineering,4,7,Open Elective – II
+Computer Science and Engineering,4,7,Programme Elective – III
+Computer Science and Engineering,4,7,Programme Elective – IV
+Computer Science and Engineering,4,7,Project – I
+Computer Science and Engineering,4,7,Industrial Training
+Computer Science and Engineering,4,8,Open Elective – III (From MOOC)
+Computer Science and Engineering,4,8,Open Elective – IV
+Computer Science and Engineering,4,8,Programme Elective – V
+Computer Science and Engineering,4,8,Programme Elective – VI
+Computer Science and Engineering,4,8,Project – II
+Computer Science and Engineering,4,8,Extra-Curricular Activities and Discipline
+Electronics and Communication Engineering,1,1,Oscillations, Waves and Optics
+Electronics and Communication Engineering,1,1,Mathematics – I
+Electronics and Communication Engineering,1,1,Basic Electrical Engineering
+Electronics and Communication Engineering,1,1,Engineering Graphics and Design
+Electronics and Communication Engineering,1,1,Biology for Engineers
+Electronics and Communication Engineering,1,2,Engineering Chemistry – A
+Electronics and Communication Engineering,1,2,Mathematics – II
+Electronics and Communication Engineering,1,2,Programming for Problem Solving
+Electronics and Communication Engineering,1,2,Workshop Practice
+Electronics and Communication Engineering,1,2,Communication Skills
+Electronics and Communication Engineering,1,2,Environmental Science (Audit)
+Electronics and Communication Engineering,2,3,Mathematics – III
+Electronics and Communication Engineering,2,3,Engineering Mechanics
+Electronics and Communication Engineering,2,3,Basic Electronics Engineering
+Electronics and Communication Engineering,2,3,Electronic Instrumentation and Measurements
+Electronics and Communication Engineering,2,3,Digital Electronics
+Electronics and Communication Engineering,2,3,Signals and Systems
+Electronics and Communication Engineering,2,4,Entrepreneurship and Startups
+Electronics and Communication Engineering,2,4,Indian Constitution (Audit)
+Electronics and Communication Engineering,2,4,Microprocessors and Applications
+Electronics and Communication Engineering,2,4,Analog Communication Systems
+Electronics and Communication Engineering,2,4,Linear Integrated Circuits
+Electronics and Communication Engineering,2,4,Circuits and Devices
+Electronics and Communication Engineering,2,4,Power Electronics
+Electronics and Communication Engineering,3,5,Principles of Economics
+Electronics and Communication Engineering,3,5,Essence of Indian Knowledge and Tradition (Audit)
+Electronics and Communication Engineering,3,5,Applied Probability and Statistics
+Electronics and Communication Engineering,3,5,Digital Design using HDL
+Electronics and Communication Engineering,3,5,Digital Signal Processing
+Electronics and Communication Engineering,3,5,Electromagnetic Theory
+Electronics and Communication Engineering,3,5,Control Systems
+Electronics and Communication Engineering,3,5,Study Tour (Audit)
+Electronics and Communication Engineering,3,6,Organizational Behaviour
+Electronics and Communication Engineering,3,6,Open Elective – I (From MOOC)
+Electronics and Communication Engineering,3,6,Programme Elective – I
+Electronics and Communication Engineering,3,6,Programme Elective – II
+Electronics and Communication Engineering,3,6,Seminar
+Electronics and Communication Engineering,3,6,Digital Communications
+Electronics and Communication Engineering,3,6,Microwave Engineering
+Electronics and Communication Engineering,3,6,Microelectronics
+Electronics and Communication Engineering,4,7,Open Elective – II
+Electronics and Communication Engineering,4,7,Programme Elective – III
+Electronics and Communication Engineering,4,7,Programme Elective – IV
+Electronics and Communication Engineering,4,7,Antenna and Radar Engineering
+Electronics and Communication Engineering,4,7,VLSI Designs
+Electronics and Communication Engineering,4,7,Project – I
+Electronics and Communication Engineering,4,7,Industrial Training
+Electronics and Communication Engineering,4,8,Open Elective – III (From MOOC)
+Electronics and Communication Engineering,4,8,Open Elective – IV
+Electronics and Communication Engineering,4,8,Programme Elective – V
+Electronics and Communication Engineering,4,8,Programme Elective – VI
+Electronics and Communication Engineering,4,8,Project – II
+Electronics and Communication Engineering,4,8,Extra-Curricular Activities and Discipline
+Electrical Engineering,1,1,Introduction to Electromagnetic Theory
+Electrical Engineering,1,1,Mathematics – I
+Electrical Engineering,1,1,Basic Electrical Engineering
+Electrical Engineering,1,1,Engineering Graphics and Design
+Electrical Engineering,1,1,Biology for Engineers
+Electrical Engineering,1,2,Engineering Chemistry – A
+Electrical Engineering,1,2,Mathematics – II
+Electrical Engineering,1,2,Programming for Problem Solving
+Electrical Engineering,1,2,Workshop Practices
+Electrical Engineering,1,2,Communication Skills
+Electrical Engineering,1,2,Environmental Science (Audit)
+Electrical Engineering,2,3,Mathematics – III
+Electrical Engineering,2,3,Engineering Mechanics
+Electrical Engineering,2,3,Basic Electronics Engineering
+Electrical Engineering,2,3,Analog Electronic Circuits
+Electrical Engineering,2,3,Electrical Circuit Analysis
+Electrical Engineering,2,3,Electrical Machines – I
+Electrical Engineering,2,4,Microprocessors and its Applications
+Electrical Engineering,2,4,Power Systems – I
+Electrical Engineering,2,4,Electrical Machines – II
+Electrical Engineering,2,4,Power Electronics
+Electrical Engineering,2,4,Entrepreneurship and Startups
+Electrical Engineering,2,4,Indian Constitution (Audit)
+Electrical Engineering,3,5,Digital Electronics
+Electrical Engineering,3,5,Control Systems
+Electrical Engineering,3,5,Electromagnetic Fields
+Electrical Engineering,3,5,Power Systems – II
+Electrical Engineering,3,5,Signals and Systems
+Electrical Engineering,3,5,Principles of Economics
+Electrical Engineering,3,5,Essence of Indian Knowledge and Tradition (Audit)
+Electrical Engineering,3,5,Study Tour (Audit)
+Electrical Engineering,3,6,Organizational Behavior
+Electrical Engineering,3,6,Switchgear and Protection
+Electrical Engineering,3,6,Electrical Measurements and Instrumentation
+Electrical Engineering,3,6,Programme Elective – I
+Electrical Engineering,3,6,Programme Elective – II
+Electrical Engineering,3,6,Open Elective – I (from MOOC)
+Electrical Engineering,3,6,Seminar
+Electrical Engineering,4,7,Modern Control Engineering
+Electrical Engineering,4,7,Programme Elective – III
+Electrical Engineering,4,7,Programme Elective – IV
+Electrical Engineering,4,7,Open Elective – II
+Electrical Engineering,4,7,Project – I
+Electrical Engineering,4,7,Industrial Training
+Electrical Engineering,4,8,Programme Elective – V
+Electrical Engineering,4,8,Programme Elective – VI
+Electrical Engineering,4,8,Open Elective – III (from MOOC)
+Electrical Engineering,4,8,Open Elective – IV
+Electrical Engineering,4,8,Project – II
+Electrical Engineering,4,8,Extra-curricular Activities and Discipline
+Mechanical Engineering,1,1,Introduction to Mechanics
+Mechanical Engineering,1,1,Mathematics – I
+Mechanical Engineering,1,1,Basic Electrical Engineering
+Mechanical Engineering,1,1,Engineering Graphics and Design
+Mechanical Engineering,1,1,Biology for Engineers
+Mechanical Engineering,1,2,Communication Skills
+Mechanical Engineering,1,2,Mathematics – II
+Mechanical Engineering,1,2,Engineering Chemistry – B
+Mechanical Engineering,1,2,Programming for Problem Solving
+Mechanical Engineering,1,2,Workshop Practice
+Mechanical Engineering,1,2,Environmental Science (Audit)
+Mechanical Engineering,2,3,Mathematics – III
+Mechanical Engineering,2,3,Engineering Mechanics
+Mechanical Engineering,2,3,Basic Electronics Engineering
+Mechanical Engineering,2,3,Engineering Metallurgy
+Mechanical Engineering,2,3,Thermodynamics
+Mechanical Engineering,2,3,Machine Drawing
+Mechanical Engineering,2,4,Entrepreneurship and Startups
+Mechanical Engineering,2,4,Indian Constitution (Audit)
+Mechanical Engineering,2,4,Applied Thermodynamics
+Mechanical Engineering,2,4,Fluid Mechanics and Machines
+Mechanical Engineering,2,4,Strength of Materials
+Mechanical Engineering,2,4,Theory of Machines
+Mechanical Engineering,3,5,Principles of Economics
+Mechanical Engineering,3,5,Essence of Indian Knowledge and Tradition
+Mechanical Engineering,3,5,Heat Transfer
+Mechanical Engineering,3,5,Mechanics of Solids
+Mechanical Engineering,3,5,Manufacturing Processes
+Mechanical Engineering,3,5,Design of Machine Elements
+Mechanical Engineering,3,5,Instrumentation and Control
+Mechanical Engineering,3,5,Study Tour (Audit)
+Mechanical Engineering,3,6,Organizational Behaviour
+Mechanical Engineering,3,6,Manufacturing Technology
+Mechanical Engineering,3,6,Machine Design
+Mechanical Engineering,3,6,Programme Elective – I
+Mechanical Engineering,3,6,Programme Elective – II
+Mechanical Engineering,3,6,Open Elective – I (From MOOC)
+Mechanical Engineering,3,6,Seminar
+Mechanical Engineering,4,7,Automation in Manufacturing
+Mechanical Engineering,4,7,Mechanical Vibrations
+Mechanical Engineering,4,7,Programme Elective – III
+Mechanical Engineering,4,7,Programme Elective – IV
+Mechanical Engineering,4,7,Open Elective – II
+Mechanical Engineering,4,7,Industrial Training
+Mechanical Engineering,4,7,Project – I
+Mechanical Engineering,4,8,Energy Conversion Techniques
+Mechanical Engineering,4,8,Programme Elective – V
+Mechanical Engineering,4,8,Programme Elective – VI
+Mechanical Engineering,4,8,Open Elective – III (From MOOC)
+Mechanical Engineering,4,8,Open Elective – IV
+Mechanical Engineering,4,8,Project – II
+Mechanical Engineering,4,8,Extra-Curricular Activities and Discipline
+Chemistry,1,1,Plant Biochemistry
+Chemistry,1,2,Engineering Chemistry – B
+Mathematics,1,1,Basic Mathematics
+Mathematics,1,2,Statistical Methods and Experimental Designs
+Mathematics,1,1,Mathematics – I
+Mathematics,1,2,Mathematics – II
+Mathematics,2,3,Mathematics – III
+Physics,1,1,Engineering Physics
+Physics,1,1,Introduction to Mechanics
+Physics,1,1,Quantum Mechanics for Engineers
+Physics,1,1,Oscillations, Waves and Optics
+Physics,1,1,Introduction to Electromagnetic Theory
+Humanities and Social Sciences,1,1,Communication Skills and Personality Development
+Humanities and Social Sciences,3,5,Entrepreneurship Development and Business Management
+Humanities and Social Sciences,3,6,Forest Economics and Marketing
+Humanities and Social Sciences,3,6,Marketing of Non-Timber Forest Products
+Humanities and Social Sciences,1,2,Communication Skills
+Humanities and Social Sciences,2,4,Entrepreneurship and Startups
+Humanities and Social Sciences,2,4,Indian Constitution
+Humanities and Social Sciences,3,5,Principles of Economics
+Humanities and Social Sciences,3,5,Essence of Indian Knowledge and Tradition
+Humanities and Social Sciences,3,6,Organizational Behaviour
+Humanities and Social Sciences,4,7,Managing Stress
+Humanities and Social Sciences,4,7,Human Resources Management
+Humanities and Social Sciences,4,7,Project Formulation, Analysis and its Management
+Humanities and Social Sciences,4,7,Engineering Ethics
+Centre for Management Studies,4,7,Time Series Analysis
+Centre for Management Studies,4,7,Entrepreneurship in Renewable Energy
+Centre for Management Studies,4,8,Marketing Management
