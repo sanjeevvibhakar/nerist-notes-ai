@@ -4,41 +4,48 @@ from django.core.management.base import BaseCommand
 from django.contrib.auth.models import User
 from core.models import Department, Year, Semester, Subject, SubjectOffering
 
+from django.db import transaction
+
 class Command(BaseCommand):
     help = 'Seeds initial data from CSV'
 
     def handle(self, *args, **kwargs):
-        self.stdout.write('Cleaning old data and seeding from actual_subjects.csv...')
+        self.stdout.write('--- SEEDING START ---')
+        
+        with transaction.atomic():
+            self.stdout.write('Deleting old data...')
+            
+            # Count before
+            pre_count = Department.objects.count()
+            self.stdout.write(f'Existing departments: {pre_count}')
+            
+            SubjectOffering.objects.all().delete()
+            Semester.objects.all().delete()
+            Year.objects.all().delete()
+            Subject.objects.all().delete()
+            Department.objects.all().delete()
+            
+            # Count after
+            post_count = Department.objects.count()
+            self.stdout.write(f'Departments after delete: {post_count}')
+            
+            if post_count > 0:
+                self.stdout.write(self.style.ERROR('⚠️ FAILED TO DELETE OLD DEPARTMENTS!'))
 
-        # Mapping for normalization
-        DEPT_MAP = {
-            'Computer Science & Engineering': 'Computer Science and Engineering',
-            'Electronics & Communication': 'Electronics and Communication Engineering',
-            'Electronics and Communication': 'Electronics and Communication Engineering',
-            'Dept. of Chemistry': 'Chemistry',
-            'Dept. of Mathematics': 'Mathematics',
-            'Dept. of Physics': 'Physics',
-            'Department of Chemistry, Mathematics, Physics': 'Chemistry', # Adjusting based on logic
-        }
+            # Mapping for normalization
+            DEPT_MAP = {
+                'Computer Science & Engineering': 'Computer Science and Engineering',
+                'Electronics & Communication': 'Electronics and Communication Engineering',
+                'Electronics and Communication': 'Electronics and Communication Engineering',
+                'Dept. of Chemistry': 'Chemistry',
+                'Dept. of Mathematics': 'Mathematics',
+                'Dept. of Physics': 'Physics',
+                'Department of Chemistry, Mathematics, Physics': 'Chemistry',
+            }
 
-        self.stdout.write('Deleting old data...')
-        count, _ = SubjectOffering.objects.all().delete()
-        self.stdout.write(f'Deleted {count} SubjectOfferings')
-        
-        count, _ = Semester.objects.all().delete()
-        self.stdout.write(f'Deleted {count} Semesters')
-        
-        count, _ = Year.objects.all().delete()
-        self.stdout.write(f'Deleted {count} Years')
-        
-        count, _ = Subject.objects.all().delete()
-        self.stdout.write(f'Deleted {count} Subjects')
-        
-        count, _ = Department.objects.all().delete()
-        self.stdout.write(f'Deleted {count} Departments')
-
-        # Path to CSV
-        csv_path = os.path.join(os.path.dirname(__file__), 'actual_subjects.csv')
+            self.stdout.write('Seeding from CSV...')
+            # Path to CSV
+            csv_path = os.path.join(os.path.dirname(__file__), 'actual_subjects.csv')
         
         if not os.path.exists(csv_path):
             self.stdout.write(self.style.ERROR(f'CSV file not found at {csv_path}'))
