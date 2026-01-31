@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import DepartmentList from "../components/DepartmentList";
 import YearList from "../components/YearList";
 import SemesterList from "../components/SemesterList";
@@ -178,9 +179,7 @@ const Home = () => {
         </div>
       </main>
 
-      <footer className="mt-20 py-12 border-t border-gray-100 text-center">
-        <p className="text-[10px] font-black text-gray-300 uppercase tracking-[0.2em]">NERIST Study Portal • Designed for Excellence</p>
-      </footer>
+      <Footer />
     </div>
   );
 };

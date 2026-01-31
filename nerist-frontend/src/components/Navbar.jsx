@@ -29,14 +29,14 @@ const Navbar = () => {
           </span>
         </Link>
 
-        <div className="flex items-center gap-8">
-          <div className="hidden md:flex items-center gap-6 text-sm font-bold uppercase tracking-widest text-gray-500">
-            <Link to="/" className={`hover:text-blue-600 transition-colors ${isActive('/') ? 'text-blue-600' : ''}`}>Library</Link>
-            <Link to="/forum" className={`hover:text-blue-600 transition-colors ${isActive('/forum') ? 'text-blue-600' : ''}`}>Community</Link>
-            <Link to="/about" className={`hover:text-blue-600 transition-colors ${isActive('/about') ? 'text-blue-600' : ''}`}>About</Link>
+        <div className="flex items-center gap-10">
+          <div className="hidden md:flex items-center gap-8 text-sm font-bold uppercase tracking-widest text-gray-500">
+            <Link to="/" className={`hover:text-blue-600 transition-colors duration-300 ${isActive('/') ? 'text-blue-600' : ''}`}>Library</Link>
+            <Link to="/forum" className={`hover:text-blue-600 transition-colors duration-300 ${isActive('/forum') ? 'text-blue-600' : ''}`}>Community</Link>
+            <Link to="/about" className={`hover:text-blue-600 transition-colors duration-300 ${isActive('/about') ? 'text-blue-600' : ''}`}>About</Link>
           </div>
 
-          <div className="flex items-center gap-4 border-l pl-6 border-gray-100">
+          <div className="flex items-center gap-4 border-l pl-8 border-gray-100">
             {token ? (
               <div className="flex items-center gap-4">
                 {isAdmin && (

@@ -1,21 +1,19 @@
-// src/firebase.js
-import { initializeApp, getApps, getApp } from "firebase/app";
+import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDKd_QxfNDW2sdKSKOSlzTU4mhQRVVVeKs",
-  authDomain: "nerist-notes-ai.firebaseapp.com",
-  projectId: "nerist-notes-ai",
-  storageBucket: "nerist-notes-ai.firebasestorage.app",
-  messagingSenderId: "904496973358",
-  appId: "1:904496973358:web:34a79dfe3cb946d4a981bf",
-  measurementId: "G-6C3WKHWK2X"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
-// ✅ Ensure app is initialized only once (even with hot reload)
-const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
-
-// ✅ Export initialized auth object
-const auth = getAuth(app);
-
-export { app, auth };
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+export const auth = getAuth(app);
+export default app;

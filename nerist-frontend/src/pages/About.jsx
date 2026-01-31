@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const About = () => {
     return (
@@ -103,9 +104,7 @@ const About = () => {
                 </div>
             </div>
 
-            <footer className="border-t border-gray-100 py-12 text-center text-sm font-bold text-gray-400 uppercase tracking-widest bg-white">
-                Handcrafted with ⚡ in NERIST
-            </footer>
+            <Footer />
         </div>
     );
 };

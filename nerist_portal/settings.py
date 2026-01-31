@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # --------------------------------------------------
 SECRET_KEY = os.environ.get("SECRET_KEY", "unsafe-dev-secret-key")
 
-GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "AIzaSyBQoHmLOvQOvJoPbf4tJz1C7fY0N-MM990")
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "YOUR_GEMINI_API_KEY_HERE")
 
 DEBUG = os.environ.get("DEBUG", "False") == "True"
 
