@@ -16,31 +16,41 @@ def extract_text_from_pdf(pdf_path):
         print(f"Error reading PDF: {e}")
         return ""
 
+import google.generativeai as genai
+
 def get_answer_from_document(document_path, query):
     """
-    Simple RAG: Extracts text and finds relevant context.
-    For a production app, replace this with LangChain + Vector DB (FAISS/Pinecone).
+    Uses Google Gemini API to answer questions based on the PDF document.
     """
     full_text = extract_text_from_pdf(document_path)
     if not full_text:
         return "Could not read the document."
 
-    # Simple Keyword Search (Baseline "AI")
-    # Splits text into paragraphs and finds the most relevant one
-    paragraphs = full_text.split('\n\n')
-    best_paragraph = ""
-    max_matches = 0
+    # Configure Gemini
+    api_key = getattr(settings, "GEMINI_API_KEY", None)
+    if not api_key:
+        return "Gemini API Key is missing."
+    
+    genai.configure(api_key=api_key)
+    
+    # Use Gemini Pro
+    model = genai.GenerativeModel('gemini-1.5-flash')
 
-    query_words = query.lower().split()
+    prompt = f"""
+    You are an intelligent study assistant. 
+    Use the following document text to answer the student's question.
+    If the answer is not in the text, say you don't know but try to be helpful based on the context.
+    
+    Document Content (Truncated/Summary):
+    {full_text[:30000]}  # Limit context to avoid token limits if file is huge
+    
+    Student Question: {query}
+    
+    Answer:
+    """
 
-    for para in paragraphs:
-        match_count = sum(1 for word in query_words if word in para.lower())
-        if match_count > max_matches:
-            max_matches = match_count
-            best_paragraph = para
-
-    if max_matches > 0:
-        return f"Found relevant section:\n\n{best_paragraph.strip()}..."
-    else:
-        # Fallback: Return first 500 chars if no match (or say no match)
-        return "I couldn't find a specific answer to that in the document, but here is the beginning:\n\n" + full_text[:500] + "..."
+    try:
+        response = model.generate_content(prompt)
+        return response.text
+    except Exception as e:
+        return f"AI Error: {str(e)}"

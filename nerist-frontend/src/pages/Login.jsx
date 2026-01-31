@@ -1,12 +1,35 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from '../api/axios';
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { auth } from "../firebase";
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
+
+  const handleGoogleLogin = async () => {
+    try {
+      const provider = new GoogleAuthProvider();
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+
+      // In a real app, send user.accessToken to backend to verify and get JWT
+      // For Hackathon speed, we'll simulate a login if Firebase succeeds
+
+      console.log("Google User:", user);
+      localStorage.setItem('token', "google-session-token"); // Mock token
+      localStorage.setItem('username', user.displayName);
+      localStorage.setItem('isAdmin', "false"); // Google users are students by default
+
+      navigate('/');
+    } catch (err) {
+      console.error("Google Login Error:", err);
+      setError("Google Sign-In failed. Please check your Firebase config.");
+    }
+  };
 
   const handleLogin = async () => {
     try {
@@ -66,6 +89,20 @@ const Login = () => {
             className="w-full bg-blue-600 text-white p-3 rounded hover:bg-blue-700 transition font-semibold"
           >
             Login
+          </button>
+
+          <div className="flex items-center my-4">
+            <div className="flex-grow border-t border-gray-300"></div>
+            <span className="mx-4 text-gray-400 text-sm">Or</span>
+            <div className="flex-grow border-t border-gray-300"></div>
+          </div>
+
+          <button
+            onClick={handleGoogleLogin}
+            className="w-full bg-white border border-gray-300 text-gray-700 p-3 rounded hover:bg-gray-50 transition font-semibold flex items-center justify-center gap-2"
+          >
+            <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" className="w-5 h-5" alt="Google" />
+            Sign in with Google
           </button>
         </div>
 

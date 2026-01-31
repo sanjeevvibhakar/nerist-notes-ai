@@ -28,3 +28,6 @@ materials/
 
 # Secrets
 *.env
+
+# Temp Fix Venv
+fix_venv/

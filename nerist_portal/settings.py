@@ -12,6 +12,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # --------------------------------------------------
 SECRET_KEY = os.environ.get("SECRET_KEY", "unsafe-dev-secret-key")
 
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "AIzaSyBQoHmLOvQOvJoPbf4tJz1C7fY0N-MM990")
+
 DEBUG = os.environ.get("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = os.environ.get(
